@@ -17,10 +17,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
           
       - name: Install Dependencies 📦
-        run: npm ci
+        # Using regular npm install instead of npm ci since there's no lock file
+        run: npm install
         
       - name: Build 🏗️
         run: npm run build
